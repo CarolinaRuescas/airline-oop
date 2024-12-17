@@ -10,6 +10,16 @@ Campos:
 - Nombre
 - Array de vuelos.
 
+metodos:
+- showFlights()
+- showFlightsFromOrigin(String origin)
+- findFlight(int flightNumber): busca el vuelo y lo devuelve, si no existe devuelve null 
+- showPassengerFlights(String nif): muestra todos los vuelos donde haya un pasajero con el nif del parámetro 
+- getPassengerSeat(int flightNumber, String nif): Devuelve el asiento del pasajero en el vuelo, 
+  si no existe el vuelo o el pasajero, devuelve null 
+- updateSeatNumber(int flightNumber, String nif, int seatNumber): busca el pasajero en el vuelo, 
+  si existe le cambia el asiento. Si no existe el vuelo o el pasajero muestra mensajes de error.
+
 ### Flight
 
 Campos:
@@ -17,7 +27,12 @@ Campos:
 - origin
 - destination
 - gateNumber (puerta de embarque): int
-- pasajeros 
+- pasajeros
+
+métodos:
+- showInfo()
+- hasPassenger(String nif): devuelve true si el pasajero está en el vuelo y false si no lo está 
+- findPassenger(String nif): busca el pasajero en el vuelo y lo devuelve, si no existe devuelve null
 
 ### Passenger 
 
@@ -26,6 +41,9 @@ Campos:
 - name
 - surname
 - seatNumber: Integer (con mayúsculas para que pueda ser null)
+
+métodos:
+- showInfo()
 
 ## Componentes
 

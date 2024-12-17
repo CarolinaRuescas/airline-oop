@@ -18,6 +18,22 @@ public class Flight {
         this.passengers = passengers;
     }
 
+    public void showInfo(){
+        System.out.println("Número de vuelo: " + flightNumber + " Origen: "
+                + origin + "Destino: " + destination + "Puerta de embarque: " + getNumber + "Número de pasajeros:");
+        for (var passenger : passengers){
+            passenger.showInfo();
+        }
+    }
+
+    public Passenger hasPassenger(String nif){
+
+
+    }
+
+
+
+
     public int getFlightNumber() {
         return flightNumber;
     }
