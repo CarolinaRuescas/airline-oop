@@ -18,20 +18,37 @@ public class Flight {
         this.passengers = passengers;
     }
 
-    public void showInfo(){
+    // Mostrar información
+
+    public void showInfo() {
         System.out.println("Número de vuelo: " + flightNumber + " Origen: "
                 + origin + "Destino: " + destination + "Puerta de embarque: " + getNumber + "Número de pasajeros:");
-        for (var passenger : passengers){
+        for (var passenger : passengers) {
             passenger.showInfo();
         }
     }
 
-    public Passenger hasPassenger(String nif){
+    // Devuelve true si el pasajero está en el vuelo y false si no lo está
 
-
+    public boolean hasPassenger(String nif) {
+        for (var passenger : passengers) {
+            if (passenger.getNif().equals(nif)){
+                return true;
+            }
+        }
+        return false;
     }
 
+    // Busca el pasajero en el vuelo y lo devuelve, si no existe devuelve null
 
+    public Passenger findPassenger(String nif) {
+        for (var passenger : passengers) {
+            if(passenger.getNif().equals(nif)){
+                return passenger;
+            }
+        }
+        return null;
+    }
 
 
     public int getFlightNumber() {
